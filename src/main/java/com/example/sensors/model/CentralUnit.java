@@ -12,22 +12,22 @@ public class CentralUnit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final Long id;
     private Long clusterId;
-    private String model;
+    private String name;
 
-    public CentralUnit(Long id, String model) {
+    public CentralUnit(Long id, String name) {
         this.id = id;
-        this.model = model;
+        this.name = name;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getModel() {
-        return model;
+    public String getName() {
+        return name;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setName(String name) {
+        this.name = name;
     }
 }

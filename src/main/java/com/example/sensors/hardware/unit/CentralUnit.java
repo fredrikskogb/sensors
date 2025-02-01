@@ -15,19 +15,19 @@ import java.util.List;
  */
 public class CentralUnit {
     private Long id;
-    private String model;
+    private String name;
     private List<Sensor> sensors;
 
     public CentralUnit() {}
 
-    public CentralUnit(String model, List<Sensor> sensors) {
-        this.model = model;
+    public CentralUnit(String name, List<Sensor> sensors) {
+        this.name = name;
         this.sensors = sensors;
     }
 
-    public CentralUnit(Long id, String model, List<Sensor> sensors) {
+    public CentralUnit(Long id, String name, List<Sensor> sensors) {
         this.id = id;
-        this.model = model;
+        this.name = name;
         this.sensors = sensors;
     }
 
@@ -35,12 +35,12 @@ public class CentralUnit {
         return id;
     }
 
-    public String getModel() {
-        return model;
+    public String getName() {
+        return name;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Sensor> getSensors() {
