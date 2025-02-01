@@ -5,11 +5,13 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+// Has multiple Sensor
 @Entity
 public class CentralUnit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final Long id;
+    private Long clusterId;
     private String model;
 
     public CentralUnit(Long id, String model) {

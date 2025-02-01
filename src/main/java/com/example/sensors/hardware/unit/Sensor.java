@@ -1,4 +1,4 @@
-package com.example.sensors.hardware;
+package com.example.sensors.hardware.unit;
 
 public class Sensor {
     private Long id;
@@ -9,6 +9,7 @@ public class Sensor {
         return id;
     }
 
+    // TODO: Simulate changes in temperature
     public double getValue() {
         return value;
     }

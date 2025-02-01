@@ -1,12 +1,17 @@
-package com.example.sensors.hardware;
+package com.example.sensors.hardware.unit;
 
 import java.util.List;
 
 /**
- * The central unit reads the state of all the sensors in the building complex. <br>
- * It also controls the flow of heat based on the expected value of the sensor. <br><br>
+ * The central unit reads the state of all the sensors in the building complex/cluster. <br>
+ * It should also control the flow of heat based on the expected value of the sensor. <br><br>
+ * The central unit calls the database with current values, since a persistent storage was required.
+ * Even though the central unit could act as an independent storage. <br>
+ * I have decided to let the central unit call the database, instead of reading from the database,
+ * to simulate it to be independent and working without a connection. <br><br>
  * To keep it simple as a PoC the sensor will in this case hold the expected value instead of the central unit,
- * making the sensor a bit more tightly coupled to the behavior.
+ * making the sensor a bit more tightly coupled to the behavior.<br>
+ * The heat control will also not be implemented.
  */
 public class CentralUnit {
     private Long id;
