@@ -1,1 +1,1 @@
-## The files in this package mocks the hardware behavior
+## The files in this package mocks the hardware
