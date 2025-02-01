@@ -2,6 +2,12 @@ package com.example.sensors.hardware;
 
 import java.util.List;
 
+/**
+ * The central unit reads the state of all the sensors in the building complex. <br>
+ * It also controls the flow of heat based on the expected value of the sensor. <br><br>
+ * To keep it simple as a PoC the sensor will in this case hold the expected value instead of the central unit,
+ * making the sensor a bit more tightly coupled to the behavior.
+ */
 public class CentralUnit {
     private Long id;
     private String model;

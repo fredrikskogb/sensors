@@ -11,11 +11,13 @@ public class Sensor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private final Long id;
     private double value;
+    private double expectedValue;
     private Long centralUnitId;
 
-    public Sensor(Long id, double value, Long centralUnitId) {
+    public Sensor(Long id, double value, double expectedValue, Long centralUnitId) {
         this.id = id;
         this.value = value;
+        this.expectedValue = expectedValue;
         this.centralUnitId = centralUnitId;
     }
 
@@ -29,6 +31,14 @@ public class Sensor {
 
     public void setValue(double value) {
         this.value = value;
+    }
+
+    public double getExpectedValue() {
+        return expectedValue;
+    }
+
+    public void setExpectedValue(double expectedValue) {
+        this.expectedValue = expectedValue;
     }
 
     public Long getCentralUnitId() {
