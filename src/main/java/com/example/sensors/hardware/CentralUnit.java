@@ -1,23 +1,19 @@
-package com.example.sensors.hardware.unit;
+package com.example.sensors.hardware;
 
 import java.util.List;
 
 /**
  * The central unit reads the state of all the sensors in the building complex/cluster. <br>
  * It should also control the flow of heat based on the expected value of the sensor. <br><br>
- * The central unit calls the database with current values, since a persistent storage was required.
- * Even though the central unit could act as an independent storage. <br>
- * I have decided to let the central unit call the database, instead of reading from the database,
- * to simulate it to be independent and working without a connection. <br><br>
- * To keep it simple as a PoC the sensor will in this case hold the expected value instead of the central unit,
- * making the sensor a bit more tightly coupled to the behavior.<br>
- * The heat control will also not be implemented.
+ * The central unit updates the database with current values since a persistent storage was required,
+ * even though the central unit could have acted as an independent storage instead. <br>
  */
 public class CentralUnit {
     private Long id;
     private String name;
     private List<Sensor> sensors;
 
+    // TODO: Project Reactor should be able to poll async
     public CentralUnit() {}
 
     public CentralUnit(String name, List<Sensor> sensors) {

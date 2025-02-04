@@ -1,4 +1,4 @@
-package com.example.sensors.hardware.unit;
+package com.example.sensors.hardware;
 
 public class Sensor {
     private Long id;
@@ -10,6 +10,7 @@ public class Sensor {
     }
 
     // TODO: Simulate changes in temperature
+    // Project Reactor should be able to poll async
     public double getValue() {
         return value;
     }

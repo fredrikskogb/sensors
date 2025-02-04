@@ -1,9 +1,6 @@
 package com.example.sensors.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Sensor {
@@ -12,6 +9,7 @@ public class Sensor {
     private final Long id;
     private double value;
     private double expectedValue;
+    @ManyToOne
     private Long centralUnitId;
 
     public Sensor(Long id, double value, double expectedValue, Long centralUnitId) {
