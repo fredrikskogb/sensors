@@ -1,6 +1,6 @@
 package com.example.sensors.repository.reactor;
 
-import com.example.sensors.model.SensorAsync;
+import com.example.sensors.model.sensor.SensorAsync;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;

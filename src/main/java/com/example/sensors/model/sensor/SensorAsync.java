@@ -1,22 +1,22 @@
-package com.example.sensors.model;
+package com.example.sensors.model.sensor;
 
-import jakarta.persistence.*;
 
-@Entity
-public class Sensor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table("sensor")
+public class SensorAsync {
     private final Long id;
     private double value;
     private double expectedValue;
-    @ManyToOne
-    private CentralUnit centralUnit;
+    @Column("central_unit_id")
+    private Long centralUnitId;
 
-    public Sensor(Long id, double value, double expectedValue, CentralUnit centralUnit) {
+    public SensorAsync(Long id, double value, double expectedValue, Long centralUnitId) {
         this.id = id;
         this.value = value;
         this.expectedValue = expectedValue;
-        this.centralUnit = centralUnit;
+        this.centralUnitId = centralUnitId;
     }
 
     public Long getId() {
@@ -39,11 +39,11 @@ public class Sensor {
         this.expectedValue = expectedValue;
     }
 
-    public CentralUnit getCentralUnit() {
-        return this.centralUnit;
+    public Long getCentralUnitId() {
+        return centralUnitId;
     }
 
-    public void setCentralUnit(CentralUnit centralUnit) {
-        this.centralUnit = centralUnit;
+    public void setCentralUnitId(Long centralUnitId) {
+        this.centralUnitId = centralUnitId;
     }
 }

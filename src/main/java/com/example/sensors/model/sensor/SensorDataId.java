@@ -1,4 +1,4 @@
-package com.example.sensors.model;
+package com.example.sensors.model.sensor;
 
 import jakarta.persistence.Embeddable;
 
