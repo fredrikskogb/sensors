@@ -10,13 +10,13 @@ public class Sensor {
     private double value;
     private double expectedValue;
     @ManyToOne
-    private Long centralUnitId;
+    private CentralUnit centralUnit;
 
-    public Sensor(Long id, double value, double expectedValue, Long centralUnitId) {
+    public Sensor(Long id, double value, double expectedValue, CentralUnit centralUnit) {
         this.id = id;
         this.value = value;
         this.expectedValue = expectedValue;
-        this.centralUnitId = centralUnitId;
+        this.centralUnit = centralUnit;
     }
 
     public Long getId() {
@@ -39,11 +39,11 @@ public class Sensor {
         this.expectedValue = expectedValue;
     }
 
-    public Long getCentralUnitId() {
-        return centralUnitId;
+    public CentralUnit getCentralUnit() {
+        return this.centralUnit;
     }
 
-    public void setCentralUnitId(Long centralUnitId) {
-        this.centralUnitId = centralUnitId;
+    public void setCentralUnit(CentralUnit centralUnit) {
+        this.centralUnit = centralUnit;
     }
 }

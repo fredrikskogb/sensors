@@ -10,5 +10,5 @@ public class Cluster {
     private Long id;
     private String name;
     @ManyToOne
-    private Long customerId;
+    private Customer customer;
 }

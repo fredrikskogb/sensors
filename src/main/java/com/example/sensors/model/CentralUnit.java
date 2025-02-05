@@ -10,7 +10,7 @@ public class CentralUnit {
     private final Long id;
     private String name;
     @ManyToOne
-    private Long clusterId;
+    private Cluster cluster;
 
     public CentralUnit(Long id, String name) {
         this.id = id;
