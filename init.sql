@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS sensor (
 );
 
 CREATE TABLE sensor_data (
-    sensor_id BIGINT NOT NULL,
-    central_unit_id BIGINT NOT NULL,
+    sensor_id INTEGER NOT NULL,
+    central_unit_id INTEGER NOT NULL,
     value DOUBLE PRECISION,
     expected_value DOUBLE PRECISION,
     time TIMESTAMP,

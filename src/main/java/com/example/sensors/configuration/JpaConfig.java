@@ -37,7 +37,7 @@ public class JpaConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("com.example.sensors.model"); // JPA entity package
+        factoryBean.setPackagesToScan("com.example.sensors.model");
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         return factoryBean;
     }

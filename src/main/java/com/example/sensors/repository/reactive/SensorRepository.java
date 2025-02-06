@@ -1,4 +1,4 @@
-package com.example.sensors.repository.reactor;
+package com.example.sensors.repository.reactive;
 
 import com.example.sensors.model.sensor.SensorAsync;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
