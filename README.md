@@ -2,6 +2,7 @@ Fetch real time data from mocked temperature sensors.
 ### Tech stack:
 - Java 21
 - Spring Boot 3
+- Reactive Mono/Flux
 - Docker with PostgreSQL
 
 ### Try it out:
