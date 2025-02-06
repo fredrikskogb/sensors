@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS sensor (
     FOREIGN KEY (central_unit_id) REFERENCES central_unit(id)
 );
 
-CREATE TABLE sensor_data (
+CREATE TABLE sensor_history (
     sensor_id INTEGER NOT NULL,
     central_unit_id INTEGER NOT NULL,
     value DOUBLE PRECISION,

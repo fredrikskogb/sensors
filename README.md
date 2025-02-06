@@ -6,8 +6,17 @@ Fetch real time data from mocked temperature sensors.
 - Docker with PostgreSQL
 
 ### Try it out:
-- `$ docker compose up --build`. Ports in use 5434:5432
-- Start the spring boot app. Ports in use 8080
+Ports in use: 5434:5432, 8080
+
+Either:
+- Start the app with IntelliJ with Java 21
+
+Or:
+- `$ docker compose up --build`
+- Start the spring boot app
+
+Test the app:
+
 - Test an endpoint `$ curl -v http:localhost:8080/stream/temperature/1`
 - All endpoints: http://localhost:8080/swagger-ui/index.html#
 

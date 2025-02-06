@@ -6,13 +6,13 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class SensorDataId implements Serializable {
+public class SensorHistoryId implements Serializable {
     private Long sensorId;
     private Long centralUnitId;
 
-    public SensorDataId() {}
+    public SensorHistoryId() {}
 
-    public SensorDataId(Long sensorId, Long centralUnitId) {
+    public SensorHistoryId(Long sensorId, Long centralUnitId) {
         this.sensorId = sensorId;
         this.centralUnitId = centralUnitId;
     }
@@ -37,7 +37,7 @@ public class SensorDataId implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SensorDataId that = (SensorDataId) o;
+        SensorHistoryId that = (SensorHistoryId) o;
         return Objects.equals(sensorId, that.sensorId) && Objects.equals(centralUnitId, that.centralUnitId);
     }
 

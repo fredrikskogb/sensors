@@ -6,9 +6,9 @@ import jakarta.persistence.Entity;
 import java.time.Instant;
 
 @Entity
-public class SensorData {
+public class SensorHistory {
     @EmbeddedId
-    private SensorDataId id;
+    private SensorHistoryId id;
     private double value;
     private double expectedValue;
     private Instant time;
