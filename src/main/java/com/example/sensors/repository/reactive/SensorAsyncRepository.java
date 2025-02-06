@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
 
 @Repository
-public interface SensorRepository extends ReactiveCrudRepository<SensorAsync, Long> {
+public interface SensorAsyncRepository extends ReactiveCrudRepository<SensorAsync, Long> {
     public Flux<SensorAsync> findAllByCentralUnitId(Long centralUnitId);
 }
