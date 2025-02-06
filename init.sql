@@ -34,24 +34,18 @@ CREATE TABLE sensor_data (
     PRIMARY KEY (sensor_id, central_unit_id)
 );
 
--- Inserting sample data
-
--- Insert data into customer
 INSERT INTO customer (id, "name")
 VALUES
     (1, 'Customer A');
 
--- Insert data into cluster
 INSERT INTO cluster (id, customer_id, "name")
 VALUES
     (1, 1, 'Cluster 1');
 
--- Insert data into central_unit
 INSERT INTO central_unit (id, cluster_id, "name")
 VALUES
     (1, 1, 'Central Unit 1');
 
--- Insert data into sensor
 INSERT INTO sensor (id, central_unit_id, expected_value, value)
 VALUES
     (1, 1, 22.0, 20.5),
