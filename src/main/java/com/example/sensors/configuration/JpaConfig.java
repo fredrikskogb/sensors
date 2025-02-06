@@ -14,13 +14,16 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.example.sensors.repository") // specify your JPA repository package
+@EnableJpaRepositories(
+        basePackages = "com.example.sensors.repository",
+        entityManagerFactoryRef = "entityManagerFactory",
+        transactionManagerRef = "transactionManager"
+)
 public class JpaConfig {
 
     @Primary
-    @Bean
+    @Bean(name = "primaryDataSource")
     public DataSource dataSource() {
-        // Configure your JPA datasource here
         return DataSourceBuilder.create()
                 .url("jdbc:postgresql://localhost:5434/sensors")
                 .username("postgres")
@@ -30,19 +33,18 @@ public class JpaConfig {
     }
 
     @Primary
-    @Bean
+    @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean factoryBean = new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("com.example.sensors.model"); // entity package
+        factoryBean.setPackagesToScan("com.example.sensors.model"); // JPA entity package
         factoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         return factoryBean;
     }
 
     @Primary
-    @Bean
+    @Bean(name = "transactionManager")
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
 }
-

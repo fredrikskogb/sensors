@@ -7,9 +7,5 @@ import reactor.core.publisher.Flux;
 
 @Repository
 public interface SensorRepository extends ReactiveCrudRepository<SensorAsync, Long> {
-    /**
-    * Flux will stream data from the sensor table and return Sensor when available instead
-    * of the whole collection once.
-    */
     public Flux<SensorAsync> findAllByCentralUnitId(Long centralUnitId);
 }

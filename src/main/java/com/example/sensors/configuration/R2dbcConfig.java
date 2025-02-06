@@ -12,21 +12,21 @@ import org.springframework.r2dbc.core.DatabaseClient;
 @EnableR2dbcRepositories(basePackages = "com.example.sensors.repository.reactor") // specify your reactive repository package
 public class R2dbcConfig {
 
-    @Bean
+    @Bean(name = "reactiveConnectionFactory")
     public ConnectionFactory connectionFactory() {
-        // Configure the R2DBC connection factory here
+        // Configure the R2DBC connection factory for the secondary datasource
         return ConnectionFactories.get(ConnectionFactoryOptions.builder()
                 .option(ConnectionFactoryOptions.DRIVER, "postgresql")
                 .option(ConnectionFactoryOptions.HOST, "localhost")
                 .option(ConnectionFactoryOptions.PORT, 5434)
-                .option(ConnectionFactoryOptions.DATABASE, "sensors")
+                .option(ConnectionFactoryOptions.DATABASE, "sensors") // Secondary database
                 .option(ConnectionFactoryOptions.USER, "postgres")
                 .option(ConnectionFactoryOptions.PASSWORD, "postgres")
                 .build());
     }
 
-    @Bean
-    public DatabaseClient databaseClient(ConnectionFactory connectionFactory) {
-        return DatabaseClient.create(connectionFactory);
+    @Bean(name = "reactiveDatabaseClient")
+    public DatabaseClient databaseClient(ConnectionFactory reactiveConnectionFactory) {
+        return DatabaseClient.create(reactiveConnectionFactory);
     }
 }

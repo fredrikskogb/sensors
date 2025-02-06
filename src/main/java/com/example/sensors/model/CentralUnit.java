@@ -12,9 +12,10 @@ public class CentralUnit {
     @ManyToOne
     private Cluster cluster;
 
-    public CentralUnit(Long id, String name) {
+    public CentralUnit(Long id, String name, Cluster cluster) {
         this.id = id;
         this.name = name;
+        this.cluster = cluster;
     }
 
     public Long getId() {
@@ -27,5 +28,13 @@ public class CentralUnit {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Cluster getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(Cluster cluster) {
+        this.cluster = cluster;
     }
 }
