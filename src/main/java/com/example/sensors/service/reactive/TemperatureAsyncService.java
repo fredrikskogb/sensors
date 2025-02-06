@@ -20,6 +20,6 @@ public record TemperatureAsyncService(
     }
 
     public void updateSensorExpectedValue(Long id, double expectedValue) {
-        sensorRepository.updateExpectedValue(id, expectedValue);
+        sensorRepository.updateExpectedValueBySensorId(id, expectedValue);
     }
 }

@@ -7,17 +7,20 @@ import jakarta.persistence.*;
 public class Sensor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private final Long id;
+    private Long id;
     private double value;
+    @Column(name = "expected_value")
     private double expectedValue;
-    @ManyToOne
-    private CentralUnit centralUnit;
+    @Column(name = "central_unit_id")
+    private Long centralUnitId;
 
-    public Sensor(Long id, double value, double expectedValue, CentralUnit centralUnit) {
+    public Sensor() {}
+
+    public Sensor(Long id, double value, double expectedValue, Long centralUnitId) {
         this.id = id;
         this.value = value;
         this.expectedValue = expectedValue;
-        this.centralUnit = centralUnit;
+        this.centralUnitId = centralUnitId;
     }
 
     public Long getId() {
@@ -40,11 +43,11 @@ public class Sensor {
         this.expectedValue = expectedValue;
     }
 
-    public CentralUnit getCentralUnit() {
-        return this.centralUnit;
+    public Long getCentralUnitId() {
+        return this.centralUnitId;
     }
 
-    public void setCentralUnit(CentralUnit centralUnit) {
-        this.centralUnit = centralUnit;
+    public void setCentralUnitId(Long centralUnitId) {
+        this.centralUnitId = centralUnitId;
     }
 }
