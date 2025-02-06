@@ -9,7 +9,7 @@ Fetch real time data from mocked temperature sensors.
 Ports in use: 5434:5432, 8080
 
 Either:
-- Start the app with IntelliJ with Java 21
+- Start the app with IntelliJ and Java 21
 
 Or:
 - `$ docker compose up --build`
