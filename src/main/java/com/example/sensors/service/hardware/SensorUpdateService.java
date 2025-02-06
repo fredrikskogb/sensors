@@ -1,12 +1,12 @@
 package com.example.sensors.service.hardware;
 
-import com.example.sensors.model.CentralUnit;
 import com.example.sensors.model.sensor.Sensor;
 import com.example.sensors.repository.CentralUnitRepository;
 import com.example.sensors.repository.SensorRepository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,6 +18,7 @@ public record SensorUpdateService(
         JdbcTemplate jdbcTemplate
 ) {
 
+    @Transactional
     @Scheduled(fixedRate = 5000) // Runs every 5 seconds
     public void updateSensorValuesForMockedCentralUnit() {
         List<Sensor> sensors = sensorRepository.findByCentralUnitId(1L);

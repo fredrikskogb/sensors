@@ -1,6 +1,5 @@
 package com.example.sensors.model.sensor;
 
-import com.example.sensors.model.CentralUnit;
 import jakarta.persistence.*;
 
 @Entity
