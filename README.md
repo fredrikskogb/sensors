@@ -17,7 +17,7 @@ Or:
 
 Test the app:
 
-- Test an endpoint `$ curl -v http:localhost:8080/temperature/stream/sensor/1`
+- Test an endpoint `$ curl -v http://localhost:8080/temperature/stream/sensor/1`
 - All endpoints: http://localhost:8080/swagger-ui/index.html#
 
 ![ER-diagram](src/main/resources/static/images/er_diagram.png)
